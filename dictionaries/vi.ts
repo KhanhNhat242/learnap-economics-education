@@ -55,11 +55,13 @@ const vi = {
   trust: {
     label: 'Vì sao chọn LearnAP',
     items: [
-      { id: 'phd', title: 'PhD US', text: 'Trực tiếp giảng dạy bởi Tiến sĩ tại Mỹ' },
-      { id: 'rmit', title: 'RMIT Lecturer', text: 'Giảng viên đại học quốc tế danh tiếng' },
-      { id: 'years', title: '8+ Năm', text: 'Kinh nghiệm thực chiến luyện thi AP & SAT' },
-      { id: 'collegeboard', title: 'College Board', text: 'Giáo trình chuẩn hóa Hoa Kỳ' },
-    ],
+      { "id": "phd", "title": "PhD US", "text": "Trực tiếp giảng dạy bởi Tiến sĩ tốt nghiệp tại Mỹ" },
+      { "id": "rmit", "title": "RMIT Lecturer", "text": "Giảng viên Đại học RMIT – chuẩn học thuật quốc tế" },
+      { "id": "years", "title": "8+ Năm", "text": "Kinh nghiệm thực chiến luyện thi AP & SAT" },
+      { "id": "roadmap", "title": "Lộ trình cá nhân hóa", "text": "Bám sát format đề thi quốc tế, nhiều học viên đạt điểm cao" },
+      { "id": "bilingual", "title": "Song ngữ Việt – Anh", "text": "Nền tảng học tập hiện đại, hỗ trợ hai ngôn ngữ" },
+      { "id": "lms", "title": "LMS & Live Chat", "text": "Hệ thống học bảo mật, học linh hoạt kèm chat hỗ trợ trực tiếp" }
+    ]
   },
   expert: {
     eyebrow: 'Về Chuyên Gia',

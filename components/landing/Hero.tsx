@@ -47,11 +47,6 @@ export default function Hero({ dict }: SectionProps) {
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_1fr] lg:gap-12 xl:gap-20">
           {/* ===== Trái: chữ + CTA ===== */}
           <div className="max-w-2xl">
-            <p className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold tracking-wide text-gold-300 sm:text-sm">
-              <span aria-hidden className="size-1.5 rounded-full bg-brand-teal" />
-              {t.tagline}
-            </p>
-
             <h1
               id="hero-title"
               className="mt-6 font-serif text-[2.5rem] leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl lg:text-[3.5rem] xl:text-6xl"
@@ -62,25 +57,6 @@ export default function Hero({ dict }: SectionProps) {
             <p className="mt-6 max-w-xl text-base leading-relaxed text-pretty text-white/75 sm:text-lg">
               {t.subheadline}
             </p>
-
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-              <ButtonLink href="#consult" variant="gold" size="lg">
-                {t.primaryCta}
-                <ArrowRightOutlined aria-hidden />
-              </ButtonLink>
-              <ButtonLink href="#programs" variant="outline-light" size="lg">
-                {t.secondaryCta}
-              </ButtonLink>
-            </div>
-
-            <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-white/80">
-              {t.highlights.map((item) => (
-                <li key={item} className="inline-flex items-center gap-2">
-                  <CheckCircleFilled aria-hidden className="text-brand-teal" />
-                  {item}
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* ===== Phải: mockup laptop video bài giảng + 3 badge nổi ===== */}
@@ -119,25 +95,6 @@ export default function Hero({ dict }: SectionProps) {
             <div aria-hidden className="relative -mx-2 h-3 rounded-b-xl bg-linear-to-b from-navy-700 to-navy-800 sm:-mx-6 sm:h-4">
               <div className="absolute top-0 left-1/2 h-1.5 w-20 -translate-x-1/2 rounded-b-md bg-navy-950/60" />
             </div>
-
-            {/* Badge nổi */}
-            <HeroBadge
-              icon={<SafetyCertificateOutlined />}
-              label={t.badges.phd}
-              className="top-0 -left-1 animate-float-slow sm:left-0"
-            />
-            <HeroBadge
-              icon={<TrophyOutlined />}
-              label={t.badges.target}
-              className="top-1/3 -right-1 animate-float-slower sm:-right-2"
-              style={{ animationDelay: '1.2s' }}
-            />
-            <HeroBadge
-              icon={<ReadOutlined />}
-              label={t.badges.standard}
-              className="bottom-0 left-4 animate-float-slow sm:left-10"
-              style={{ animationDelay: '2.4s' }}
-            />
           </div>
         </div>
       </Container>
