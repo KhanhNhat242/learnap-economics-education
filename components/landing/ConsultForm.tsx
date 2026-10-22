@@ -76,50 +76,46 @@ export default function ConsultForm({ text, courseOptions }: ConsultFormProps) {
 
       {/* Form luôn mount (chỉ ẩn) để sự kiện chọn khóa học vẫn set được giá trị khi đang ở màn thành công */}
       <div hidden={submitted}>
-          <p className="font-serif text-2xl font-semibold">{text.title}</p>
-          <Form<ConsultValues>
-            form={form}
-            layout="vertical"
-            requiredMark={false}
-            onFinish={() => setSubmitted(true)}
-            className="mt-6"
+        <p className="font-serif text-2xl font-semibold">{text.title}</p>
+        <Form<ConsultValues>
+          form={form}
+          layout="vertical"
+          requiredMark={false}
+          onFinish={() => setSubmitted(true)}
+          className="mt-6"
+        >
+          <Form.Item
+            name="name"
+            label={text.nameLabel}
+            rules={[{ required: true, whitespace: true, message: text.nameRequired }]}
           >
-            <Form.Item
-              name="name"
-              label={text.nameLabel}
-              rules={[{ required: true, whitespace: true, message: text.nameRequired }]}
-            >
-              <Input placeholder={text.namePlaceholder} autoComplete="name" maxLength={80} />
-            </Form.Item>
+            <Input placeholder={text.namePlaceholder} autoComplete="name" maxLength={80} />
+          </Form.Item>
 
-            <Form.Item
-              name="phone"
-              label={text.phoneLabel}
-              rules={[
-                { required: true, whitespace: true, message: text.phoneRequired },
-                {
-                  validator: (_, value?: string) =>
-                    !value || !value.trim() || isValidPhone(value)
-                      ? Promise.resolve()
-                      : Promise.reject(new Error(text.phoneInvalid)),
-                },
-              ]}
-            >
-              <Input placeholder={text.phonePlaceholder} autoComplete="tel" inputMode="tel" maxLength={24} />
-            </Form.Item>
+          <Form.Item
+            name="phone"
+            label={text.phoneLabel}
+            rules={[
+              { required: true, whitespace: true, message: text.phoneRequired },
+              {
+                validator: (_, value?: string) =>
+                  !value || !value.trim() || isValidPhone(value)
+                    ? Promise.resolve()
+                    : Promise.reject(new Error(text.phoneInvalid)),
+              },
+            ]}
+          >
+            <Input placeholder={text.phonePlaceholder} autoComplete="tel" inputMode="tel" maxLength={24} />
+          </Form.Item>
 
-            <Form.Item name="role" label={text.roleLabel} rules={[{ required: true, message: text.roleRequired }]}>
-              <Select placeholder={text.roleLabel} options={text.roles.map((role) => ({ ...role }))} />
-            </Form.Item>
+          <Form.Item name="course" label={text.courseLabel} rules={[{ required: true, message: text.courseRequired }]}>
+            <Select placeholder={text.coursePlaceholder} options={courseOptions} />
+          </Form.Item>
 
-            <Form.Item name="course" label={text.courseLabel} rules={[{ required: true, message: text.courseRequired }]}>
-              <Select placeholder={text.coursePlaceholder} options={courseOptions} />
-            </Form.Item>
-
-            <button type="submit" className={buttonClass('gold', 'lg', 'mt-2 w-full whitespace-normal text-center')}>
-              {text.submit}
-            </button>
-          </Form>
+          <button type="submit" className={buttonClass('gold', 'lg', 'mt-2 w-full whitespace-normal text-center')}>
+            {text.submit}
+          </button>
+        </Form>
       </div>
     </div>
   )

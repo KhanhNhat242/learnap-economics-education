@@ -18,6 +18,7 @@ export default function Consult({ dict, lang }: SectionProps) {
     <Section
       id="consult"
       tone="navy"
+      decor="cta"
       labelledBy="consult-title"
       background={
         <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -44,14 +45,6 @@ export default function Consult({ dict, lang }: SectionProps) {
             description={t.message}
             className="mb-8!"
           />
-          <ul data-reveal="up" className="space-y-3">
-            {t.benefits.map((benefit) => (
-              <li key={benefit} className="flex items-center gap-3 text-base font-medium text-white/85">
-                <CheckCircleFilled aria-hidden className="text-lg text-gold-400" />
-                {benefit}
-              </li>
-            ))}
-          </ul>
         </div>
 
         <div data-reveal="up" style={{ '--reveal-delay': '150ms' } as React.CSSProperties}>

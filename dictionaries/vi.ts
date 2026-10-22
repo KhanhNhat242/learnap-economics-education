@@ -20,8 +20,8 @@ const vi = {
     items: [
       { id: 'expert', label: 'Về Chuyên Gia' },
       { id: 'programs', label: 'Khóa Học' },
-      { id: 'platform', label: 'Nền Tảng LMS' },
       { id: 'journey', label: 'Lộ Trình' },
+      { id: 'consult', label: 'Liên hệ' },
     ],
     cta: 'Đăng ký tư vấn',
     openMenu: 'Mở menu',
@@ -55,16 +55,16 @@ const vi = {
   trust: {
     label: 'Vì sao chọn LearnAP',
     items: [
-      { "id": "phd", "title": "PhD US", "text": "Trực tiếp giảng dạy bởi Tiến sĩ tốt nghiệp tại Mỹ" },
-      { "id": "rmit", "title": "RMIT Lecturer", "text": "Giảng viên Đại học RMIT – chuẩn học thuật quốc tế" },
-      { "id": "years", "title": "8+ Năm", "text": "Kinh nghiệm thực chiến luyện thi AP & SAT" },
-      { "id": "roadmap", "title": "Lộ trình cá nhân hóa", "text": "Bám sát format đề thi quốc tế, nhiều học viên đạt điểm cao" },
-      { "id": "bilingual", "title": "Song ngữ Việt – Anh", "text": "Nền tảng học tập hiện đại, hỗ trợ hai ngôn ngữ" },
-      { "id": "lms", "title": "LMS & Live Chat", "text": "Hệ thống học bảo mật, học linh hoạt kèm chat hỗ trợ trực tiếp" }
-    ]
+      { id: 'phd', title: 'PhD US', text: 'Trực tiếp giảng dạy bởi Tiến sĩ tốt nghiệp tại Mỹ' },
+      { id: 'rmit', title: 'RMIT Lecturer', text: 'Giảng viên Đại học RMIT – chuẩn học thuật quốc tế' },
+      { id: 'years', title: '8+ Năm', text: 'Kinh nghiệm thực chiến luyện thi AP & SAT' },
+      { id: 'roadmap', title: 'Lộ trình cá nhân hóa', text: 'Bám sát format đề thi quốc tế, nhiều học viên đạt điểm cao' },
+      { id: 'bilingual', title: 'Song ngữ Việt – Anh', text: 'Nền tảng học tập hiện đại, hỗ trợ hai ngôn ngữ' },
+      { id: 'lms', title: 'LMS & Live Chat', text: 'Hệ thống học bảo mật, học linh hoạt kèm chat hỗ trợ trực tiếp' },
+    ],
   },
   expert: {
-    eyebrow: 'Về Chuyên Gia',
+    eyebrow: '',
     title: 'Học cùng chuyên gia – Chuẩn hóa tư duy học thuật',
     intro:
       'Mỗi lộ trình được dẫn dắt trực tiếp bởi Tiến sĩ tốt nghiệp tại Mỹ, hiện là giảng viên Đại học RMIT, với hơn 8 năm kinh nghiệm luyện thi thực chiến.',
@@ -90,11 +90,23 @@ const vi = {
     imageAlt: 'Học viên theo dõi giảng viên giảng bài trực tuyến qua màn hình máy tính',
   },
   programs: {
-    eyebrow: 'Chương Trình Đào Tạo',
+    eyebrow: '',
     title: '5 chương trình đào tạo trọng tâm',
     description:
       'Từ AP Kinh tế, SAT đến kèm 1:1 — mỗi chương trình bám sát chuẩn quốc tế và mục tiêu riêng của từng học viên.',
     detailCta: 'Xem chi tiết',
+    carousel: {
+      label: 'Danh sách khóa học',
+      prev: 'Khóa học trước',
+      next: 'Khóa học tiếp theo',
+    },
+    courseSite: {
+      label: 'Website khóa học',
+      title: 'Học trọn lộ trình trên website khóa học trực tuyến',
+      text: 'Xem danh mục khóa học, học bài giảng video và ôn tập với tài liệu song ngữ trên hệ thống LMS bảo mật — linh hoạt mọi lúc, mọi nơi.',
+      cta: 'Truy cập website khóa học',
+      newTab: '(mở trong tab mới)',
+    },
     modal: {
       overviewLabel: 'Tổng quan khóa học',
       tuitionLabel: 'Học phí',
@@ -134,7 +146,7 @@ const vi = {
     imageAlt: 'Học viên đeo tai nghe tập trung học bài trên laptop',
   },
   journey: {
-    eyebrow: 'Lộ Trình Học Tập',
+    eyebrow: '',
     title: 'Lộ trình 4 bước chinh phục điểm cao',
     description: 'Một quy trình rõ ràng, đo lường được ở từng giai đoạn — từ buổi test đầu tiên đến ngày thi.',
     steps: [
@@ -191,7 +203,7 @@ const vi = {
     ],
   },
   consult: {
-    eyebrow: 'Đăng Ký Tư Vấn',
+    eyebrow: '',
     title: 'Bắt đầu lộ trình chinh phục AP & SAT cùng chuyên gia ngay hôm nay',
     message:
       'Để lại thông tin, đội ngũ LearnAP sẽ liên hệ tư vấn lộ trình phù hợp với mục tiêu của bạn — hoàn toàn miễn phí.',
@@ -230,7 +242,7 @@ const vi = {
     exploreHeading: 'Khám phá',
     contactHeading: 'Liên hệ',
     hotlineLabel: 'Hotline / Zalo',
-    facebookLabel: 'Facebook Page',
+    facebookLabel: 'Facebook',
     terms: 'Điều khoản học vụ',
     privacy: 'Chính sách bảo mật',
     copyright: '© 2026 LearnAP Economics. Bảo lưu mọi quyền.',

@@ -11,6 +11,11 @@ export const site = {
   zaloHref: 'https://zalo.me/16692479708',
   facebookHref: 'https://www.facebook.com/profile.php?id=61583968445838',
   messengerHref: 'https://m.me/61583968445838',
+  /**
+   * PLACEHOLDER — link website bán khóa học (section Programs). Tạm trỏ tới trang tham khảo cleveracademy.vn
+   * (docs/REQUIREMENTS.md mục 8, đã bỏ tham số fbclid). Thay bằng domain/route khóa học thật của LearnAP khi chốt Q4.
+   */
+  courseSiteHref: 'https://cleveracademy.vn/',
   logo: '/images/logo-learnap.webp',
   logoMark: '/images/logo-learnap-mark.webp',
 } as const

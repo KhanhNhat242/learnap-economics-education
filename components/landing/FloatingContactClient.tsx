@@ -43,7 +43,9 @@ export default function FloatingContactClient({ text }: FloatingContactClientPro
   }
 
   return (
-    <div className="fixed right-4 bottom-4 z-40 flex flex-col items-end gap-3 sm:right-6 sm:bottom-6">
+    // Khung bao không nhận click (pointer-events-none) để không chặn nội dung trang phía dưới khi panel đang đóng;
+    // từng nút / panel tự bật lại pointer-events khi hiển thị.
+    <div className="pointer-events-none fixed right-4 bottom-4 z-40 flex flex-col items-end gap-3 sm:right-6 sm:bottom-6">
       {/* Panel kênh liên hệ */}
       <div
         id={PANEL_ID}
@@ -51,7 +53,7 @@ export default function FloatingContactClient({ text }: FloatingContactClientPro
         aria-label={text.title}
         inert={!open}
         className={`w-[min(20rem,calc(100vw-2rem))] origin-bottom-right rounded-3xl border border-line bg-white p-5 shadow-card-hover transition-[opacity,transform] duration-300 motion-reduce:transition-none ${
-          open ? 'scale-100 opacity-100' : 'pointer-events-none scale-95 opacity-0'
+          open ? 'pointer-events-auto scale-100 opacity-100' : 'scale-95 opacity-0'
         }`}
       >
         <p className="font-serif text-lg font-semibold text-navy-900">{text.title}</p>
@@ -77,7 +79,7 @@ export default function FloatingContactClient({ text }: FloatingContactClientPro
           onClick={scrollToTop}
           inert={!showBackToTop}
           className={`inline-flex size-11 items-center justify-center rounded-full border border-line bg-white text-navy-900 shadow-card transition-[opacity,transform] duration-300 hover:bg-surface focus-visible:outline-navy-900 motion-reduce:transition-none ${
-            showBackToTop ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-2 opacity-0'
+            showBackToTop ? 'pointer-events-auto translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
           }`}
         >
           <ArrowUpOutlined aria-hidden="true" />
@@ -89,7 +91,7 @@ export default function FloatingContactClient({ text }: FloatingContactClientPro
           aria-controls={PANEL_ID}
           aria-label={open ? text.close : text.open}
           onClick={() => setOpen((value) => !value)}
-          className="inline-flex size-14 items-center justify-center rounded-full bg-gold-500 text-2xl text-navy-900 shadow-gold transition-colors duration-300 hover:bg-gold-600 focus-visible:outline-navy-900"
+          className="pointer-events-auto inline-flex size-14 items-center justify-center rounded-full bg-gold-500 text-2xl text-navy-900 shadow-gold transition-colors duration-300 hover:bg-gold-600 focus-visible:outline-navy-900"
         >
           {open ? <CloseOutlined aria-hidden="true" /> : <MessageOutlined aria-hidden="true" />}
         </button>

@@ -3,7 +3,6 @@ import { getDictionary } from '@/dictionaries'
 import { hasLocale } from '@/lib/i18n-config'
 import SiteHeader from '@/components/landing/SiteHeader'
 import Hero from '@/components/landing/Hero'
-import TrustBar from '@/components/landing/TrustBar'
 import Expert from '@/components/landing/Expert'
 import Programs from '@/components/landing/Programs'
 import Platform from '@/components/landing/Platform'
@@ -32,12 +31,9 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
       <SiteHeader dict={dict} lang={lang} overlay />
       <main id="main">
         <Hero dict={dict} lang={lang} />
-        <TrustBar dict={dict} lang={lang} />
         <Expert dict={dict} lang={lang} />
         <Programs dict={dict} lang={lang} />
-        <Platform dict={dict} lang={lang} />
         <Journey dict={dict} lang={lang} />
-        <Testimonials dict={dict} lang={lang} />
         <Consult dict={dict} lang={lang} />
       </main>
       <Footer dict={dict} lang={lang} />

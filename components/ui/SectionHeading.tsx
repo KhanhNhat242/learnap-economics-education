@@ -27,14 +27,10 @@ export function SectionHeading({
       data-reveal="up"
       className={`mb-10 lg:mb-12 ${centered ? 'mx-auto max-w-2xl text-center' : 'max-w-xl'} ${className}`}
     >
-      <Eyebrow theme={theme} centered={centered}>
-        {eyebrow}
-      </Eyebrow>
       <h2
         id={id}
-        className={`mt-4 font-serif text-3xl font-semibold leading-tight tracking-tight text-balance sm:text-4xl lg:text-[2.75rem] ${
-          dark ? 'text-white' : 'text-navy-900'
-        }`}
+        className={`mt-4 font-serif text-3xl font-semibold leading-tight tracking-tight text-balance sm:text-4xl lg:text-[2.75rem] ${dark ? 'text-white' : 'text-navy-900'
+          }`}
       >
         {title}
       </h2>
@@ -60,9 +56,8 @@ export function Eyebrow({
 }) {
   return (
     <p
-      className={`inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] ${
-        theme === 'dark' ? 'text-gold-400' : 'text-gold-600'
-      } ${centered ? 'justify-center' : ''}`}
+      className={`inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] ${theme === 'dark' ? 'text-gold-400' : 'text-gold-600'
+        } ${centered ? 'justify-center' : ''}`}
     >
       <span aria-hidden className="h-px w-8 bg-current opacity-70" />
       {children}

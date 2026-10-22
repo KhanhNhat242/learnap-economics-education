@@ -148,6 +148,11 @@ Khi thiếu dữ liệu, dùng placeholder **nhìn là biết giả** và gom v�
 |---|---|---|---|
 | 21/10/2026 | Dev | Tạo tài liệu từ Phiếu Dev 31 | `learnap-economics.pdf` |
 | 21/10/2026 | Dev | Thêm mục 12 — Định hướng giao diện & bố cục landing page (10 section); chốt bảng màu, typography, spacing | Bản mô tả "EdTech Academic Style" do team gửi |
+| 22/10/2026 | Dev | Trust Bar (12.5 #3): từ 4 cột tĩnh → carousel 6 thẻ, hiển thị 4/6; thay "College Board" bằng 3 cụm lấy từ USP 2–3 | Yêu cầu của team |
+| 22/10/2026 | Dev | 5 Khóa học (12.5 #5): từ lưới 3 + 2 → carousel coverflow | Yêu cầu của team |
+| 22/10/2026 | Dev | 5 Khóa học (12.5 #5): thêm khối giới thiệu "Website khóa học" + nút link ra ngoài. **Placeholder** trỏ tới trang tham khảo cleveracademy.vn (`data/site.ts` → `courseSiteHref`) — phải thay bằng link khóa học thật của LearnAP khi chốt Q4 | Yêu cầu của team |
+| 22/10/2026 | Dev | Hero (12.3): trên desktop chặn chiều cao tối đa 52rem thay vì luôn cao 100% màn hình | Yêu cầu của team |
+| 22/10/2026 | Dev | Gộp Trust Bar (12.5 #3) vào section Về Chuyên gia (#4): trên là nội dung chuyên gia, dưới là băng chuyền uy tín tự chạy ngang | Yêu cầu của team |
 
 ## 12. Định hướng giao diện Landing Page (EdTech Academic Style)
 
@@ -168,7 +173,7 @@ Khi thiếu dữ liệu, dùng placeholder **nhìn là biết giả** và gom v�
 - Padding section: mobile **48–64px** (`py-12`–`py-16`), desktop **80–100px** (`py-20`–`py-24`).
 - Tiêu đề section → nội dung: **40–48px** (`mb-10`–`mb-12`). Grid gap thẻ: **24–32px** (`gap-6`–`gap-8`).
 - Xen kẽ nền: Trắng → Xám rất nhạt `#F8FAFC` → Thẻ kính mờ (glassmorphism) → Navy ở phần chốt hành động. Không dùng đường kẻ thô để ngăn section.
-- Hero vừa đúng **1 màn hình** khi vào trang.
+- Hero vừa đúng **1 màn hình** khi vào trang trên mobile/laptop; trên desktop màn hình cao, chiều cao Hero chặn tối đa **52rem (832px)** để không bị kéo dài trống.
 
 ### 12.4 Ảnh
 - Ảnh thư viện lớn/cổ điển → nền Hero hoặc nền CTA.
@@ -181,9 +186,9 @@ Khi thiếu dữ liệu, dùng placeholder **nhìn là biết giả** và gom v�
 |---|---|---|---|---|
 | 1 | Header sticky | — | trong suốt trên Hero → trắng mờ khi cuộn | < 15 từ: logo, menu neo (Về Chuyên Gia · Khóa Học · Nền Tảng LMS · Lộ Trình), nút VI \| EN, CTA nhỏ "Đăng ký tư vấn" |
 | 2 | Hero | `#top` | Navy | 2 cột. Trái: tagline "Học viện Kinh tế & Du học Mỹ chuẩn quốc tế"; headline ≈10–12 từ "Chinh phục điểm AP 4–5/5 và chứng chỉ SAT cùng Tiến sĩ tốt nghiệp tại Mỹ"; sub ≈25–30 từ; CTA chính "Nhận tư vấn lộ trình 1:1", CTA phụ "Khám phá 5 khóa học". Phải: ảnh học thuật + mockup laptop video bài giảng + 3 badge nổi "PhD US · RMIT Lecturer", "Target 4–5/5 AP", "College Board Standard" |
-| 3 | Trust Bar | — | `#F8FAFC` | 4 cột icon (3–6 từ/cụm): PhD US · RMIT Lecturer · 8+ Năm · College Board |
+| 3 | Trust Bar | — | (gộp vào #4) | **Đã gộp vào section 4** (đặt dưới nội dung chuyên gia, nền trắng). Carousel chạy ngang liên tục (dừng khi hover/focus), hiển thị 4 thẻ cùng lúc trên desktop (2 tablet, 1 mobile) trong 6 thẻ: PhD US · RMIT Lecturer · 8+ Năm · Lộ trình cá nhân hóa · Song ngữ Việt – Anh · LMS & Live Chat |
 | 4 | Về Chuyên gia & USP | `#expert` | Trắng | ≈100–120 từ. Trái: ảnh giảng dạy/video call. Phải: "Học cùng chuyên gia – Chuẩn hóa tư duy học thuật" + 3 ý (tiêu đề đậm + 1 câu): Học vị Tiến sĩ Mỹ; Phương pháp cá nhân hóa bám sát format đề; Đồng hành trực tiếp cùng học sinh & phụ huynh |
-| 5 | 5 Khóa học | `#programs` | `#F8FAFC` | Lưới 3 thẻ trên + 2 thẻ căn giữa dưới; mỗi thẻ 20–30 từ (tiêu đề + 2 dòng mô tả + nút xem chi tiết), có tag phân loại, hover nổi nhẹ |
+| 5 | 5 Khóa học | `#programs` | `#F8FAFC` | Carousel coverflow: thẻ giữa nổi bật + 1 thẻ thu nhỏ mỗi bên, nút trước/sau, chấm phân trang, vuốt & phím ←/→; mỗi thẻ 20–30 từ (tiêu đề + 2 dòng mô tả + nút xem chi tiết), có tag phân loại, hover nổi nhẹ |
 | 6 | Nền tảng LMS | `#platform` | Kính mờ (glass) | Tiêu đề + đoạn ≈25 từ + 3 thẻ ≈15 từ: Học 24/7 bài giảng bảo mật; Tài liệu & đề online song ngữ; Khung chat hỗ trợ trực tiếp |
 | 7 | Lộ trình 4 bước | `#journey` | Trắng | Stepper ngang, ≈15 từ/bước: 01 Đánh giá năng lực & test đầu vào · 02 Lộ trình cá nhân hóa · 03 Luyện đề thực chiến chuẩn format quốc tế · 04 Chinh phục 4–5/5 & tối ưu tín chỉ sớm |
 | 8 | Cảm nhận học viên & phụ huynh | `#testimonials` | `#F8FAFC` | Carousel 3 thẻ ≈40–50 từ/thẻ: avatar, trường, điểm đạt, nhận xét. **Bắt buộc gắn nhãn "Nội dung minh họa"** cho tới khi khách gửi feedback thật (rule 2) — không dùng ảnh/tên người thật |

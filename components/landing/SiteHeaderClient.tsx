@@ -157,9 +157,13 @@ export default function SiteHeaderClient({ nav, common, lang, overlay }: SiteHea
 
           <div className="flex items-center gap-2 justify-self-end sm:gap-3">
             <LanguageSwitch lang={lang} common={common} solid={solid} focusClass={focusClass} />
-            <a href="#consult" className={`hidden lg:inline-flex ${buttonClass('gold', 'sm')} ${focusClass}`}>
-              {nav.cta}
-            </a>
+            {/* CTA chỉ hiện từ lg; trên mobile nằm trong panel menu.
+                Ẩn/hiện ở thẻ bọc ngoài vì buttonClass() có sẵn `inline-flex` — đặt chung với `hidden` thì inline-flex thắng. */}
+            <div className="hidden lg:block">
+              <a href="#consult" className={`${buttonClass('gold', 'sm')} ${focusClass}`}>
+                {nav.cta}
+              </a>
+            </div>
             <button
               ref={menuButtonRef}
               type="button"

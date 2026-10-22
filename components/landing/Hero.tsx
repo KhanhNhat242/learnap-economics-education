@@ -15,7 +15,8 @@ import { ButtonLink } from '@/components/ui/Button'
 
 /**
  * Section 2 — Hero (#top, nền Navy), docs/REQUIREMENTS.md mục 12.5.
- * Vừa 1 màn hình: min-h-svh, chừa chỗ cho header cố định (h-20).
+ * Vừa 1 màn hình (min-h-svh), chừa chỗ cho header cố định (h-20). Desktop (lg): chiều cao tối thiểu chặn ở 52rem —
+ * màn hình cao (≥ 832px) không còn kéo Hero dài hết màn hình, nhịp giống các section khác.
  * Không dùng data-reveal ở đây: Hero là nội dung LCP, phải hiện ngay khi tải trang.
  */
 export default function Hero({ dict }: SectionProps) {
@@ -25,7 +26,7 @@ export default function Hero({ dict }: SectionProps) {
     <section
       id="top"
       aria-labelledby="hero-title"
-      className="relative isolate flex min-h-svh items-center overflow-hidden bg-navy-900 pt-28 pb-16 text-white lg:pt-24 lg:pb-12"
+      className="relative isolate flex min-h-svh items-center overflow-hidden bg-navy-900 pt-28 pb-16 text-white lg:min-h-[min(100svh,52rem)] lg:pt-24 lg:pb-12"
     >
       {/* Nền: ảnh thư viện cổ điển + lớp phủ navy + lưới chấm */}
       <div className="absolute inset-0 -z-10">
@@ -61,6 +62,8 @@ export default function Hero({ dict }: SectionProps) {
 
           {/* ===== Phải: mockup laptop video bài giảng + 3 badge nổi ===== */}
           <div className="relative mx-auto w-full max-w-xl px-2 pt-8 pb-12 sm:px-8 lg:max-w-none">
+            {/* Laptop (màn hình + đế) nổi bồng bềnh — tắt khi prefers-reduced-motion (globals.css) */}
+            <div className="animate-bob origin-bottom will-change-transform">
             {/* Màn hình laptop */}
             <div className="relative rounded-t-2xl border border-white/10 bg-navy-800 p-2 shadow-2xl shadow-black/40 sm:p-3">
               <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-navy-950">
@@ -95,6 +98,13 @@ export default function Hero({ dict }: SectionProps) {
             <div aria-hidden className="relative -mx-2 h-3 rounded-b-xl bg-linear-to-b from-navy-700 to-navy-800 sm:-mx-6 sm:h-4">
               <div className="absolute top-0 left-1/2 h-1.5 w-20 -translate-x-1/2 rounded-b-md bg-navy-950/60" />
             </div>
+            </div>
+
+            {/* Bóng đổ "mặt nước": co lại & nhạt đi khi laptop nổi lên cao */}
+            <div
+              aria-hidden
+              className="animate-bob-shadow mx-auto mt-6 h-4 w-4/5 rounded-[50%] bg-black/60 blur-xl"
+            />
           </div>
         </div>
       </Container>

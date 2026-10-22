@@ -19,8 +19,8 @@ const en: Dictionary = {
     items: [
       { id: 'expert', label: 'Our Expert' },
       { id: 'programs', label: 'Courses' },
-      { id: 'platform', label: 'LMS Platform' },
       { id: 'journey', label: 'Roadmap' },
+      { id: 'consult', label: 'Contact' },
     ],
     cta: 'Book a consultation',
     openMenu: 'Open menu',
@@ -54,16 +54,16 @@ const en: Dictionary = {
   trust: {
     label: 'Why LearnAP',
     items: [
-      { "id": "phd", "title": "PhD US", "text": "Trực tiếp giảng dạy bởi Tiến sĩ tốt nghiệp tại Mỹ" },
-      { "id": "rmit", "title": "RMIT Lecturer", "text": "Giảng viên Đại học RMIT – chuẩn học thuật quốc tế" },
-      { "id": "years", "title": "8+ Năm", "text": "Kinh nghiệm thực chiến luyện thi AP & SAT" },
-      { "id": "roadmap", "title": "Lộ trình cá nhân hóa", "text": "Bám sát format đề thi quốc tế, nhiều học viên đạt điểm cao" },
-      { "id": "bilingual", "title": "Song ngữ Việt – Anh", "text": "Nền tảng học tập hiện đại, hỗ trợ hai ngôn ngữ" },
-      { "id": "lms", "title": "LMS & Live Chat", "text": "Hệ thống học bảo mật, học linh hoạt kèm chat hỗ trợ trực tiếp" }
-    ]
+      { id: 'phd', title: 'PhD US', text: 'Taught directly by a U.S.-trained PhD' },
+      { id: 'rmit', title: 'RMIT Lecturer', text: 'RMIT University lecturer with international academic standards' },
+      { id: 'years', title: '8+ Years', text: 'Hands-on experience coaching AP & SAT students' },
+      { id: 'roadmap', title: 'Personalized Roadmap', text: 'Built around real exam formats, with many high-scoring students' },
+      { id: 'bilingual', title: 'Vietnamese – English', text: 'A modern learning platform in both languages' },
+      { id: 'lms', title: 'LMS & Live Chat', text: 'A secure LMS to learn at your own pace, with live support chat' },
+    ],
   },
   expert: {
-    eyebrow: 'Our Expert',
+    eyebrow: '',
     title: 'Learn from an expert – Think like an academic',
     intro:
       'Every study plan is led personally by a U.S.-trained PhD who currently lectures at RMIT University, bringing 8+ years of hands-on exam coaching.',
@@ -89,11 +89,23 @@ const en: Dictionary = {
     imageAlt: 'Student following an instructor teaching online on a computer screen',
   },
   programs: {
-    eyebrow: 'Our Programs',
+    eyebrow: '',
     title: '5 core training programs',
     description:
       'From AP Economics and the SAT to 1:1 mentoring — every program follows international standards and each student’s own goals.',
     detailCta: 'View details',
+    carousel: {
+      label: 'Course list',
+      prev: 'Previous course',
+      next: 'Next course',
+    },
+    courseSite: {
+      label: 'Course Website',
+      title: 'Your whole learning journey on one online course site',
+      text: 'Browse the course catalog, watch video lessons and review with bilingual materials on a secure LMS — anytime, anywhere.',
+      cta: 'Visit the course website',
+      newTab: '(opens in a new tab)',
+    },
     modal: {
       overviewLabel: 'Course overview',
       tuitionLabel: 'Tuition',
@@ -133,7 +145,7 @@ const en: Dictionary = {
     imageAlt: 'Student wearing headphones focused on studying with a laptop',
   },
   journey: {
-    eyebrow: 'Learning Roadmap',
+    eyebrow: '',
     title: 'A 4-step roadmap to top scores',
     description: 'A clear, measurable process at every stage — from your first diagnostic test to exam day.',
     steps: [
@@ -190,7 +202,7 @@ const en: Dictionary = {
     ],
   },
   consult: {
-    eyebrow: 'Free Consultation',
+    eyebrow: '',
     title: 'Start your AP & SAT success plan with an expert today',
     message:
       'Leave your details and the LearnAP team will reach out with a study plan tailored to your goals — completely free.',
@@ -229,7 +241,7 @@ const en: Dictionary = {
     exploreHeading: 'Explore',
     contactHeading: 'Contact',
     hotlineLabel: 'Hotline / Zalo',
-    facebookLabel: 'Facebook Page',
+    facebookLabel: 'Facebook',
     terms: 'Academic terms',
     privacy: 'Privacy policy',
     copyright: '© 2026 LearnAP Economics. All rights reserved.',
